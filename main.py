@@ -85,3 +85,8 @@ while not game_over:
         snake_seg.pop(0)
 
     clock.tick(15)
+    
+    screen.fill((0, 0, 0))
+    display_message("Игра окончена", 36)
+    pygame.display.update()
+    pygame.time.wait(2000)
