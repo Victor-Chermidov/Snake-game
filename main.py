@@ -70,8 +70,7 @@ while not game_over:
     if len(snake_seg) > 1:
         if snake_seg[0] == snake_seg[-1]:
             snake_seg.pop(0)
-
-    if x > SCREEN_WIDTH or x < 0 or y > SCREEN_HEIGHT or y < 0 or (x, y) in snake_seg[:-1]:
+    if x+15 > SCREEN_WIDTH or x < 0 or y+15 > SCREEN_HEIGHT or y < 0 or (x, y) in snake_seg[:-1]:
         game_over = True
 
     for pr_snake in snake_seg:
@@ -85,8 +84,3 @@ while not game_over:
         snake_seg.pop(0)
 
     clock.tick(15)
-    
-    screen.fill((0, 0, 0))
-    display_message("Игра окончена", 36)
-    pygame.display.update()
-    pygame.time.wait(2000)
